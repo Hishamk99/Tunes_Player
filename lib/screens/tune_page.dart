@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:tunes_player/models/tune_model.dart';
 import 'package:tunes_player/widgets/tune_item.dart';
 
 class TunePage extends StatelessWidget {
   const TunePage({super.key});
-  final List<Color> tunesColors = const [
-    Color(0xfff44336),
-    Color(0xfff89800),
-    Color(0xfffeeb3b),
-    Color(0xff4caf50),
-    Color(0xff2f9688),
-    Color(0xff2896f3),
-    Color(0xff9c27b0),
+  final List<TuneModel> tunes = const [
+    TuneModel(color: Color(0xfff44336), sound: 'note1.wav'),
+    TuneModel(color: Color(0xfff89800), sound: 'note2.wav'),
+    TuneModel(color: Color(0xfffeeb3b), sound: 'note3.wav'),
+    TuneModel(color: Color(0xff4caf50), sound: 'note4.wav'),
+    TuneModel(color: Color(0xff2f9688), sound: 'note5.wav'),
+    TuneModel(color: Color(0xff2896f3), sound: 'note6.wav'),
+    TuneModel(color: Color(0xff9c27b0), sound: 'note7.wav'),
   ];
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,7 @@ class TunePage extends StatelessWidget {
         title: const Text('Tune App'),
       ),
       body: Column(
-        children: tunesColors.map((e) => TuneItem(color: e)).toList(),
+        children: tunes.map((e) => TuneItem(tune : e)).toList(),
       ),
     );
   }
