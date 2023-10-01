@@ -15,24 +15,23 @@ class TunePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: const Color(0xff253238),
-          elevation: 0,
-          centerTitle: true,
-          title: const Text('Tune App'),
-        ),
-        body: Column(
-          children: getTuenItem(tunesColors),
-        ),
-      );
+      appBar: AppBar(
+        backgroundColor: const Color(0xff253238),
+        elevation: 0,
+        centerTitle: true,
+        title: const Text('Tune App'),
+      ),
+      body: Column(
+        children: tunesColors.map((e) => TuneItem(color: e)).toList(),
+      ),
+    );
   }
-  List<TuneItem> getTuenItem(List<Color>tunesColors)
-  {
-    List<TuneItem>items = [];
-    for(int i = 0; i < tunesColors.length; i++)
-    {
-      items.add(TuneItem(color : tunesColors[i]));
-    }
-    return items;
-  }
+
+  // List<TuneItem> getTuenItem(List<Color> tunesColors) {
+  //   List<TuneItem> items = [];
+  //   for (int i = 0; i < tunesColors.length; i++) {
+  //     items.add(TuneItem(color: tunesColors[i]));
+  //   }
+  //   return items;
+  // }
 }
